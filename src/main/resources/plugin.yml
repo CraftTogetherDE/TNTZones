@@ -1,0 +1,8 @@
+name: TNTZones
+version: ${project.version}
+main: de.crafttogether.tntzones.TNTZonesPlugin
+api-version: 1.13
+commands:
+  tntzone:
+    description: TNTZone-Command
+    usage: /tntzone

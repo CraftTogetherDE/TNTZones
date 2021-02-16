@@ -63,6 +63,16 @@ public class Commands implements TabExecutor {
 
             // remove
             else if (args.length >= 1 && args[0].equalsIgnoreCase("remove")) {
+                if (args.length == 1) {
+                    for (TNTZone zone : TNTZone.getZones()) {
+                        if (zone.getPlayer() == p)
+                            zone.remove();
+                    }
+
+                    p.sendMessage("§2Deine bestehenden TNTZones wurden entfernt.");
+                    return true;
+                }
+
                 if (!p.hasPermission("tntzone.remove")) {
                     p.sendMessage("§cDazu hast du keine Berechtigung.");
                     return true;
@@ -165,6 +175,8 @@ public class Commands implements TabExecutor {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         List<String> newList = new ArrayList<>();
         List<String> proposals = new ArrayList<>();
+
+        proposals.add("remove");
 
         if (sender.hasPermission("tntzone.shared"))
             proposals.add("shared");

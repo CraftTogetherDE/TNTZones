@@ -1,6 +1,8 @@
 # TNTZones
 Erstellt temporäre (WorldEdit)-Regionen in denen Spieler TNT nutzen können 
 
+![](https://craft-together.de/~irgendsoeintyp/giphy.webp)
+
 **TODO:**
 - Lebensdauer / Größe der TNTZone konfigurierbar machen. (Aktuell hardcoded auf 48x48 / 120 Sekunden)
 - Permission: `tntzone.shared` umbenennen in: `tntzone.create.shared`

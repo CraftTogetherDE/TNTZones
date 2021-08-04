@@ -119,7 +119,7 @@ public class Commands implements TabExecutor {
                     delBtn.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/tntzone remove " + zone.getID()));
                     delBtn.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, (new ComponentBuilder("§6TNTZone entfernen")).create()));
 
-                    TextComponent item = new TextComponent("§6" + p.getName() + " §3(" + Math.round(location.getX())  + ", " + Math.round(location.getY()) + ", " + Math.round(location.getZ()) + ", " + location.getWorld().getName() + ") §e");
+                    TextComponent item = new TextComponent("§6" + owner.getName() + " §3(" + Math.round(location.getX())  + ", " + Math.round(location.getY()) + ", " + Math.round(location.getZ()) + ", " + location.getWorld().getName() + ") §e");
                     item.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/tntzone tp " + location.getX() + " " + location.getY() + " " + location.getZ() + " " + location.getWorld().getName()));
                     item.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, (new ComponentBuilder("§6Teleportiere zum Mittelpunkt der Zone")).create()));
 

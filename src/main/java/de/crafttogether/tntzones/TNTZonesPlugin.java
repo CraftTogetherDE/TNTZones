@@ -26,14 +26,14 @@ public final class TNTZonesPlugin extends JavaPlugin {
         if (pm.getPermission("tntzone.create.multiple") == null)
             Bukkit.getServer().getPluginManager().addPermission(new Permission("tntzone.create.multiple"));
 
+        if (pm.getPermission("tntzone.create.shared") == null)
+            Bukkit.getServer().getPluginManager().addPermission(new Permission("tntzone.create.shared"));
+
         if (pm.getPermission("tntzone.inform") == null)
             Bukkit.getServer().getPluginManager().addPermission(new Permission("tntzone.inform"));
 
         if (pm.getPermission("tntzone.list") == null)
             Bukkit.getServer().getPluginManager().addPermission(new Permission("tntzone.list"));
-
-        if (pm.getPermission("tntzone.shared") == null)
-            Bukkit.getServer().getPluginManager().addPermission(new Permission("tntzone.shared"));
 
         if (pm.getPermission("tntzone.teleport") == null)
             Bukkit.getServer().getPluginManager().addPermission(new Permission("tntzone.teleport"));

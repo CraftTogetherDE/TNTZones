@@ -137,7 +137,7 @@ public class Commands implements TabExecutor {
 
             // shared
             else if (args.length == 1 && args[0].equalsIgnoreCase("shared")){
-                if (!p.hasPermission("tntzone.shared")) {
+                if (!p.hasPermission("tntzone.create.shared")) {
                     p.sendMessage("§cDazu hast du keine Berechtigung.");
                     return true;
                 }

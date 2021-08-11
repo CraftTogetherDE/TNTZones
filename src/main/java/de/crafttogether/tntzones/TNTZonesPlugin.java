@@ -98,11 +98,11 @@ public final class TNTZonesPlugin extends JavaPlugin {
 
     public void reload() {
         this.reloadConfig();
-        this.config = getConfig();
+        config = getConfig();
     }
 
-    public FileConfiguration getConfig() {
-        return this.config;
+    public FileConfiguration getConfiguration() {
+        return config;
     }
 
     public static TNTZonesPlugin getInstance() {

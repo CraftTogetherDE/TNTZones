@@ -165,8 +165,8 @@ public class Commands implements TabExecutor {
                 }
             }
             Bukkit.getLogger().info(denyBuild ? "YES" : "NO" + " 2");
-            FileConfiguration config = TNTZonesPlugin.getInstance().getConfig();
-            new TNTZone(p, config.getInt("radius"), config.getInt("delay"), denyBuild);
+            FileConfiguration config = TNTZonesPlugin.getInstance().getConfiguration();
+            new TNTZone(p, config.getInt("Radius"), config.getInt("Delay"), denyBuild);
             return true;
         }
 

@@ -10,6 +10,7 @@ import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -164,7 +165,8 @@ public class Commands implements TabExecutor {
                 }
             }
             Bukkit.getLogger().info(denyBuild ? "YES" : "NO" + " 2");
-            new TNTZone(p, 48, 120, denyBuild);
+            FileConfiguration config = TNTZonesPlugin.getInstance().getConfig();
+            new TNTZone(p, config.getInt("radius"), config.getInt("delay"), denyBuild);
             return true;
         }
 

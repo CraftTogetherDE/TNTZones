@@ -2,12 +2,14 @@ package de.crafttogether.tntzones;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.TabExecutor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TNTZonesPlugin extends JavaPlugin {
     private static TNTZonesPlugin plugin;
+    private FileConfiguration config;
 
     public TNTZonesPlugin() {
         plugin = this;
@@ -37,6 +39,9 @@ public final class TNTZonesPlugin extends JavaPlugin {
 
         if (pm.getPermission("tntzone.teleport") == null)
             Bukkit.getServer().getPluginManager().addPermission(new Permission("tntzone.teleport"));
+
+        saveDefaultConfig();
+        config = getConfig();
 
         registerCommand("tntzone", new Commands());
     }
@@ -89,6 +94,15 @@ public final class TNTZonesPlugin extends JavaPlugin {
         }
 
         return sb.toString().trim();
+    }
+
+    public void reload() {
+        this.reloadConfig();
+        this.config = getConfig();
+    }
+
+    public FileConfiguration getConfig() {
+        return this.config;
     }
 
     public static TNTZonesPlugin getInstance() {

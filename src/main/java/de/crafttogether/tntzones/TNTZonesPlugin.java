@@ -1,5 +1,6 @@
 package de.crafttogether.tntzones;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -39,6 +40,8 @@ public final class TNTZonesPlugin extends JavaPlugin {
 
         if (pm.getPermission("tntzone.teleport") == null)
             Bukkit.getServer().getPluginManager().addPermission(new Permission("tntzone.teleport"));
+
+        new Metrics(this, 17453);
 
         saveDefaultConfig();
         config = getConfig();
